@@ -8,9 +8,11 @@ First of all, I accessed the instance using this command.  All the names mention
 
 In this instance, I installed Jenkins by runnig this script script file called install_jenkins.sh
 
-Moreover, I changed the default password 
+Moreover, I changed the changed the default password and followed the steps here
+''''https://www.jenkins.io/doc/pipeline/tour/getting-started/''''
 
 Install Blue Ocean
+
 '''https://www.jenkins.io/doc/book/blueocean/'''
 
 
