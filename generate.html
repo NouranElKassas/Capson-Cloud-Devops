@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div>
+<input type="text" id='titleInput'>
+<button onclick="myFunction('title')">create Title</button>
+</div>
+<div>
+<input type="text" id='CategoryInput'>
+<button onclick="myFunction('cat')">create Category</button>
+</div>
+<div>
+<input type="text" id='catInput'>
+<input type="text" id='itemInput'>
+<button onclick="myFunction()">create item in Category</button>
+</div>
+<script>
+function myFunction(id) {
+	if (id=='cat'){
+    	var value= document.getElementById("CategoryInput").value;
+        var node = document.createElement("ul");
+        node.id=value;
+        node.innerHTML=value;
+        document.getElementById("cat").appendChild(node);
+
+    }
+    else if(id=='title'){
+    		  document.getElementById("title").innerHTML=document.getElementById("titleInput").value;
+        
+    }
+    else{    	
+    	var parent= document.getElementById("catInput").value;
+    	var value= document.getElementById("itemInput").value;
+        var node = document.createElement("li");
+        node.id=value;
+        node.innerHTML=value;
+        document.getElementById(parent).appendChild(node);
+    	
+    }
+  
+}
+</script>
+<result>
+<h1 id='title'></h1>
+<h3 id='cat'></h3>
+
+</result>
+
+</body>
+</html>
