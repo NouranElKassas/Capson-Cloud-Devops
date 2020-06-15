@@ -34,6 +34,10 @@ In this project, I created and ran an instance on AWS, configure Jenkins, and cr
 Final result Link
 https://s3.us-east-2.amazonaws.com/nouran.portfolio/generate.html
 
+To use this website first you can generate a title to your menu. Moreover, you can generate some categories for this menu eg: soft drinks, dessert, etc... Last but not least, append new item on each category by adding a category then the details about this item.
+![Screenshot](screenshot.png)
+
+
 
 
 
