@@ -7,6 +7,11 @@ pipeline {
         sh 'tidy -q -e *.html'
       }
     }
+    stage('Build image') 
+    { 
+      docker build . -t nouranelkassas/capstone 
+    }
+    
     stage('Upload to AWS.') {
       steps {
         withAWS(region: 'us-east-2', credentials: 'Nour') {
