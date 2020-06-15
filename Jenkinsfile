@@ -21,11 +21,7 @@ pipeline {
                     '''
       }
     }
-    stage('Lint HTML.') {
-      steps {
-        dockerfile {filename 'Dockerfile'}
-      }
-    }
+    
 
   }
 }
