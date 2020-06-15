@@ -1,4 +1,3 @@
-capstone
 #!/usr/bin/env bash
 
 # This tags and uploads an image to Docker Hub
