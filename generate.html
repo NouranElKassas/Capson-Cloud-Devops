@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <body>
-<div>
-<input type="text" id='titleInput'>
-<button onclick="myFunction('title')">create Title</button>
-</div>
-<div>
-<input type="text" id='CategoryInput'>
-<button onclick="myFunction('cat')">create Category</button>
-</div>
-<div>
-<input type="text" id='catInput'>
-<input type="text" id='itemInput'>
-<button onclick="myFunction()">create item in Category</button>
-</div>
+<style>
+	#MainTitle{
+        text-align: center;
+    }
+	#title{text-align: center;
+    }
+	#cat>ul{
+    text-align: center;
+    display:block; margin-left:auto; margin-right: auto;
+	list-style-type: none;
+	
+    	
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 <script>
 function myFunction(id) {
 	if (id=='cat'){
@@ -39,12 +43,44 @@ function myFunction(id) {
     }
   
 }
-</script>
-<result>
-<h1 id='title'></h1>
-<h3 id='cat'></h3>
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
 
-</result>
+$('#pdf').click(function () {
+    doc.fromHTML($('#result').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('Menu.pdf');
+});
+</script>
+<h1 id='MainTitle'>Generate a menu</h1>
+<div>
+<input type="text" id='titleInput'>
+<button onclick="myFunction('title')">create Title</button>
+</div>
+<div>
+<input type="text" id='CategoryInput'>
+<button onclick="myFunction('cat')">create Category</button>
+</div>
+<div>
+<input type="text" id='catInput'>
+<input type="text" id='itemInput'>
+<button onclick="myFunction()">create item in Category</button>
+</div>
+<div id="editor"></div>
+<button id="pdf">Create pdf</button>
+
+<div id="result">
+<h1 id="title"></h1>
+<h3 id="cat"></h3>
+
+</div>
+
 
 </body>
 </html>
