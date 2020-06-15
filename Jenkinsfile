@@ -19,10 +19,7 @@ pipeline {
      }
     stage('Deploy Image') {
       steps{    
-        script {
-          docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
-          }
+         sh 'docker login -u=nouranelkassas -p=B3stfrinds;docker push nouranelkassas/capstone'
         }
       }
     }
