@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Build image') 
     { 
-      docker build . -t nouranelkassas/capstone 
+      sh 'docker build . -t nouranelkassas/capstone'
     }
     
     stage('Upload to AWS.') {
