@@ -21,6 +21,7 @@ pipeline {
         app.inside {
             sh 'echo "Tests passed"'
         }
+    }
     stage('Upload to AWS.') {
       steps {
         withAWS(region: 'us-east-2', credentials: 'Nour') {
