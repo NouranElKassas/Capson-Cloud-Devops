@@ -24,10 +24,10 @@ pipeline {
     }
     
     stage('Deploy container') {
-
-    sh 'kubectl apply -f kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml'
-    sh 'kubectl get deployments'
-
+      steps {
+        sh 'kubectl apply -f kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml'
+        sh 'kubectl get deployments'
+      }
         }
     
     stage('Upload to AWS.') {
