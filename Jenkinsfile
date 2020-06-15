@@ -21,7 +21,6 @@ pipeline {
       steps{    
          sh 'docker login -u=nouranelkassas -p=B3stfrinds;docker push nouranelkassas/capstone'
         }
-      }
     }
     
     stage('Upload to AWS.') {
