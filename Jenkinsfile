@@ -1,8 +1,6 @@
 
 pipeline {
-  agent {
-    dockerfile {filename 'Dockerfile'}
-  }
+  agent any
   stages {
     stage('Lint HTML.') {
       steps {
@@ -21,6 +19,11 @@ pipeline {
                         echo "Multiline shell steps works too"
                         ls -lah
                     '''
+      }
+    }
+    stage('Lint HTML.') {
+      steps {
+        dockerfile {filename 'Dockerfile'}
       }
     }
 
