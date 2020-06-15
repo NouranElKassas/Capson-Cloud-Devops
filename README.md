@@ -15,6 +15,25 @@ Install Blue Ocean
 
 '''https://www.jenkins.io/doc/book/blueocean/'''
 
+Restart Jenkins
+
+sudo systemctl stop jenkins
+sudo systemctl start jenkins
+
+Click on blue Ocean to create a pipeline with github
+
+Then click on Create new pipeline with github
+https://www.jenkins.io/doc/book/blueocean/creating-pipelines/
+
+Connect S3 Bucket with AWS
+https://www.youtube.com/watch?v=ymZSJpAIhnM
+https://devops81.com/2020/01/04/uploading-jenkins-artifacts-to-aws-s3/
+
+In this project, I created and ran an instance on AWS, configure Jenkins, and create a pipeline to deploy a dynamic website on an AWS S3 bucket. This Project is used to create a dynamic menues and then can be downloaded as a PDF file.
+
+Final result Link
+https://s3.us-east-2.amazonaws.com/nouran.portfolio/generate.html
+
 
 
 
