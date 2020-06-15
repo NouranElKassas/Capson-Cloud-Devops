@@ -41,7 +41,7 @@ https://devops81.com/2020/01/04/uploading-jenkins-artifacts-to-aws-s3/
 ```
 
 A verification that the Project run Successfully
-![Screenshot]('Screenshot_2020-06-15 jenkins Capson-Cloud-Devops master #13(1).png')
+![Screenshot](Screenshot_2020-06-15%20jenkins%20Capson-Cloud-Devops%20master%20#13(1).png)
 
 In this project, I created and ran an instance on AWS, configure Jenkins, and create a pipeline to deploy a dynamic website on an AWS S3 bucket. This Project is used to create a dynamic menues and then can be downloaded as a PDF file.
 
