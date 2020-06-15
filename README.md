@@ -39,8 +39,9 @@ Connect S3 Bucket with AWS
 https://www.youtube.com/watch?v=ymZSJpAIhnM
 https://devops81.com/2020/01/04/uploading-jenkins-artifacts-to-aws-s3/
 ```
+
 A verification that the Project run Successfully
-![Screenshot](screenshot.png)
+![Screenshot]('Screenshot_2020-06-15 jenkins Capson-Cloud-Devops master #13(1).png')
 
 In this project, I created and ran an instance on AWS, configure Jenkins, and create a pipeline to deploy a dynamic website on an AWS S3 bucket. This Project is used to create a dynamic menues and then can be downloaded as a PDF file.
 
@@ -49,7 +50,7 @@ Final result Link
 ```https://s3.us-east-2.amazonaws.com/nouran.portfolio/generate.html```
 
 To use this website first you can generate a title to your menu. Moreover, you can generate some categories for this menu eg: soft drinks, dessert, etc... Last but not least, append new item on each category by adding a category then the details about this item.
-![Screenshot](Screenshot_2020-06-15 jenkins Capson-Cloud-Devops master #13(1).png)
+![Screenshot](screenshot.png)
 
 
 
