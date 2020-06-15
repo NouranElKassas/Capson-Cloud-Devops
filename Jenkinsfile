@@ -8,9 +8,11 @@ pipeline {
       }
     }
     stage('Build image') 
-    { 
-      sh 'docker build . -t nouranelkassas/capstone'
-    }
+    {
+      steps {
+        sh 'docker build . -t nouranelkassas/capstone'
+       }
+     }
     
     stage('Upload to AWS.') {
       steps {
