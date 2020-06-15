@@ -2,7 +2,7 @@
 pipeline {
   environment {
     registry = "nouranelkassas/capstone"
-    registryCredential = ‘capstone’
+    registryCredential = 'capstone'
   }
   agent any
   stages {
