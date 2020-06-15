@@ -1,5 +1,9 @@
 
 pipeline {
+  environment {
+    registry = "nouranelkassas/capstone"
+    registryCredential = ‘capstone’
+  }
   agent any
   stages {
     stage('Lint HTML.') {
@@ -13,6 +17,15 @@ pipeline {
         sh 'docker build . -t nouranelkassas/capstone'
        }
      }
+    stage('Deploy Image') {
+      steps{    
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
     
     stage('Upload to AWS.') {
       steps {
