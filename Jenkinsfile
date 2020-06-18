@@ -35,7 +35,8 @@ pipeline {
         sh 'kubectl create -f jenkins-service.yaml --namespace jenkins'
         sh 'sudo ./run_kubernetes.sh'
         def image_id = registry + ":latest"*/
-        sh "ansible-playbook  playbook.yml --extra-vars nouranelkassas/capstone"
+        //sh "ansible-playbook  playbook.yml --extra-vars nouranelkassas/capstone"
+        sh 'chmod +x run_kubernetes.sh'
                
         
       }
