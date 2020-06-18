@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  web:
+    image: 
+    ports:
+     - "80:80"
+
+  words:
+    image: nouranelkassas/capstone
+    deploy:
+      replicas: 5
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          memory: 50M
+        reservations:
+          memory: 50M
+
+  db:
+    image: nouranelkassas/capstone
