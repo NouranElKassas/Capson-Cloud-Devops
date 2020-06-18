@@ -17,5 +17,4 @@ nodeGroups:
     minSize: 2
     volumeSize: 100
     amiFamily: WindowsServer2019FullContainer
-    privateNetworking:false
-    allowSSH:true
+    privateNetworking: false
