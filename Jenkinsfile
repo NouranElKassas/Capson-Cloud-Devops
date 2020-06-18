@@ -29,9 +29,10 @@ pipeline {
         sh 'kubectl get deployments'
         sh 'kubectl expose deployment capstone --type=LoadBalancer --port=80 --target-port=3000'
         sh 'kubectl get svc'
-        sh 'kubectl set image deployment/capstone  my-app=nouranelkassas/capstone'*/
+        sh 'kubectl set image deployment/capstone  my-app=nouranelkassas/capstone'
         sh 'kubectl create -f jenkins-deployment.yaml --namespace jenkins'
-        sh 'kubectl create -f jenkins-service.yaml --namespace jenkins'
+        sh 'kubectl create -f jenkins-service.yaml --namespace jenkins'*/
+        sh './run_kubernetes.sh'
         
       }
         }
