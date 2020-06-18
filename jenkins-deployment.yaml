@@ -19,7 +19,7 @@ spec:
         - containerPort: 8080
 volumeMounts:
           - name: jenkins-home
-            mountPath: /var/jenkins_home
+            mountPath: /usr/share/jenkins
       volumes:
         - name: jenkins-home
           emptyDir: {}
