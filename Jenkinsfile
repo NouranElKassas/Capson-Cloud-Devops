@@ -33,8 +33,8 @@ pipeline {
         sh 'kubectl set image deployment/capstone  my-app=nouranelkassas/capstone'
         sh 'kubectl create -f jenkins-deployment.yaml --namespace jenkins'
         sh 'kubectl create -f jenkins-service.yaml --namespace jenkins'
-        sh 'sudo ./run_kubernetes.sh'*/
-        def image_id = registry + ":latest"
+        sh 'sudo ./run_kubernetes.sh'
+        def image_id = registry + ":latest"*/
         sh "ansible-playbook  playbook.yml --extra-vars nouranelkassas/capstone"
                
         
