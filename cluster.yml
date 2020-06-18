@@ -12,7 +12,7 @@ managedNodeGroups:
     minSize: 2
 
 nodeGroups:
-  - name: windows-ng
+  - name: capstone
     instanceType: m5.large
     minSize: 2
     volumeSize: 100
