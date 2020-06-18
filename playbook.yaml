@@ -1,0 +1,9 @@
+- hosts: localhost
+  become: yes
+  vars:
+    jenkins_hostname: http://18.216.53.28:8080
+    docker_users:
+    - jenkins
+  roles:
+    - role: geerlingguy.jenkins
+    - role: geerlingguy.docker
