@@ -26,26 +26,15 @@ pipeline {
     
     stage('Deploy container') {
       steps {
-        /*sh 'kubectl run my-app --image=nouranelkassas/capstone --port=3000'
-        sh 'kubectl get deployments'
-        sh 'kubectl expose deployment capstone --type=LoadBalancer --port=80 --target-port=3000'
-        sh 'kubectl get svc'
-        sh 'kubectl set image deployment/capstone  my-app=nouranelkassas/capstone'
-        sh 'kubectl create -f jenkins-deployment.yaml --namespace jenkins'
-        sh 'kubectl create -f jenkins-service.yaml --namespace jenkins'
-        sh 'sudo ./run_kubernetes.sh'
-        def image_id = registry + ":latest"*/
-        //sh "ansible-playbook  playbook.yml --extra-vars nouranelkassas/capstone"
         sh 'chmod +x run_kubernetes.sh'
-               
-        
       }
         }
-    /*stage('Deploy Stack'){
+    stage('Deploy Stack'){
       steps{
-        sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
+        //sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
+        eksctl create cluster -f cluster.yaml --kubeconfig kubeconfig
       }
-    }*/
+    }
     
     stage('Upload to AWS.') {
       steps {
