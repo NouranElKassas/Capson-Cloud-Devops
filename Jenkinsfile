@@ -32,7 +32,7 @@ pipeline {
         sh 'kubectl set image deployment/capstone  my-app=nouranelkassas/capstone'
         sh 'kubectl create -f jenkins-deployment.yaml --namespace jenkins'
         sh 'kubectl create -f jenkins-service.yaml --namespace jenkins'*/
-        sh './run_kubernetes.sh'
+        sh 'sudo ./run_kubernetes.sh'
         
       }
         }
