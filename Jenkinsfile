@@ -25,19 +25,21 @@ pipeline {
     
     stage('Deploy container') {
       steps {
-        sh 'kubectl run my-app --image=nouranelkassas/capstone --port=3000'
+        /*sh 'kubectl run my-app --image=nouranelkassas/capstone --port=3000'
         sh 'kubectl get deployments'
         sh 'kubectl expose deployment capstone --type=LoadBalancer --port=80 --target-port=3000'
         sh 'kubectl get svc'
-        sh 'kubectl set image deployment/capstone  my-app=nouranelkassas/capstone'
+        sh 'kubectl set image deployment/capstone  my-app=nouranelkassas/capstone'*/
+        sh 'kubectl create -f jenkins-deployment.yaml --namespace jenkins'
+        sh 'kubectl create -f jenkins-service.yaml --namespace jenkins'
         
       }
         }
-    stage('Deploy Stack'){
+    /*stage('Deploy Stack'){
       steps{
         sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
       }
-    }
+    }*/
     
     stage('Upload to AWS.') {
       steps {
