@@ -33,6 +33,7 @@ pipeline {
       steps{
         //sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
         //sh 'eksctl create cluster -f  cluster.yml --kubeconfig kubeconfig'
+        sh 'echo "Hello World"'
       }
     }
     
