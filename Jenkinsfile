@@ -25,10 +25,19 @@ pipeline {
     
     stage('Deploy container') {
       steps {
-        sh 'kubectl apply -f kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml'
+        sh 'kubectl run my-app --image=nouranelkassas/capstone --port=3000'
         sh 'kubectl get deployments'
+        sh 'kubectl expose deployment capstone --type=LoadBalancer --port=80 --target-port=3000'
+        sh 'kubectl get svc'
+        sh 'kubectl set image deployment/capstone  my-app=nouranelkassas/capstone'
+        
       }
         }
+    stage('Deploy Stack'){
+      steps{
+        sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
+      }
+    }
     
     stage('Upload to AWS.') {
       steps {
