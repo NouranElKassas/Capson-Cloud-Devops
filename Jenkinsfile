@@ -32,7 +32,7 @@ pipeline {
     stage('Deploy Stack'){
       steps{
         //sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
-        eksctl create cluster -f cluster.yaml --kubeconfig kubeconfig
+        sh 'eksctl create cluster -f cluster.yaml --kubeconfig kubeconfig'
       }
     }
     
