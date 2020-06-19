@@ -38,7 +38,7 @@ pipeline {
         sh 'kubectl rollout status deployment.v1.apps/capstone'
         sh 'kubectl get deployments'
         sh 'kubectl get pods'
-         sh 'kubectl rollout status deployment.v1.apps/capstone'
+        sh 'kubectl rollout status deployment.v1.apps/capstone'
       }
     }
     
