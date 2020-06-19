@@ -24,12 +24,12 @@ pipeline {
         }
     }
     
-    stage('Deploy container') {
+    stage('Run container') {
       steps {
         sh 'chmod +x run_kubernetes.sh'
       }
         }
-    stage('Deploy Stack'){
+    stage('Deploy container'){
       steps{
         //sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
         //sh 'eksctl create cluster -f  cluster.yml --kubeconfig kubeconfig'
