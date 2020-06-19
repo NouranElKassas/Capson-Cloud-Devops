@@ -32,11 +32,13 @@ pipeline {
     stage('Deploy Stack'){
       steps{
         //sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
-        sh 'eksctl create cluster -f  cluster.yml --kubeconfig kubeconfig'
+        //sh 'eksctl create cluster -f  cluster.yml --kubeconfig kubeconfig'
+        sh 'kubectl apply -f deployment.yaml'
+        sh 'kubectl apply -f service.yaml'
       }
     }
     
-    stage('Upload to AWS.') {
+    /*stage('Upload to AWS.') {
       steps {
         withAWS(region: 'us-east-2', credentials: 'Nour') {
           s3Upload(file: 'generate.html', bucket: 'nouran.portfolio', path: 'generate.html')
@@ -48,7 +50,7 @@ pipeline {
                         ls -lah
                     '''
       }
-    }
+    }*/
     
 
   }
