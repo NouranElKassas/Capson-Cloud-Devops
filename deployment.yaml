@@ -1,18 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: capstone
+  name: capstone-deployment
+  labels:
+    app: capstone
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      run: capstone
-  replicas: 2
+      app: capstone
   template:
     metadata:
       labels:
-        run: capstone
+        app: capstone
     spec:
       containers:
       - name: capstone
         image: nouranelkassas/capstone
-        command: ["start", "--host", "generate.html"]
+        ports:
+        - containerPort: 80
