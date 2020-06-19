@@ -33,6 +33,7 @@ pipeline {
       steps{
         //sh 'docker stack deploy --namespace capstone --compose-file docker-compose.yml mystack'
         //sh 'eksctl create cluster -f  cluster.yml --kubeconfig kubeconfig'
+        sh 'sudo su -'
         sh 'kubectl apply -f deployment.yaml'
         sh 'kubectl apply -f service.yaml'
         sh 'kubectl rollout status deployment.v1.apps/capstone'
