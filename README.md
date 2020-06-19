@@ -1,6 +1,6 @@
 # Capson-Cloud-Devops
 
-In this project I ran EC2 an S3 bucket on AWS and I used IAM roles to access this instance.
+In this project I ran EC2 with 2 CPUs and it's type t2.meduim an S3 bucket on AWS and I used IAM roles to access this instance.
 
 First of all, I accessed the instance using this command.  All the names mentioned is just as an example.
 
@@ -32,6 +32,12 @@ Then click on Create new pipeline with github
 
 ```
 https://www.jenkins.io/doc/book/blueocean/creating-pipelines/
+```
+
+How to Create Kubernetes and connect to jenkins
+```
+https://www.youtube.com/watch?v=KWnDVf7zwLQ
+https://www.youtube.com/watch?v=V4kYbHlQYHg
 ```
 
 Connect S3 Bucket with AWS
