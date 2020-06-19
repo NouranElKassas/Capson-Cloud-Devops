@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone
+spec:
+  selector:
+    matchLabels:
+      run: capstone
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: capstone
+    spec:
+      containers:
+      - name: capstone
+        image: nouranelkassas/capstone
+        command: ["start", "--host", "generate.html"]
